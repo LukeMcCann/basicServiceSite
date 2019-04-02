@@ -1,0 +1,16 @@
+FROM php:7.2-fpm
+
+LABEL maintainer="aaronjamesdev@gmail.com"
+
+# mcrypt imagemagick pdo_mysql
+
+RUN apt-get update && apt-get install -y  \
+    libmcrypt-dev \
+    libmagickwand-dev \
+    mysql-client \
+    --no-install-recommends \
+    && pecl install mcrypt-1.0.1 \
+    && pecl install imagick \
+    && docker-php-ext-enable mcrypt \
+    && docker-php-ext-enable imagick \
+    && docker-php-ext-install pdo_mysql
