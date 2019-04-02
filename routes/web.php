@@ -13,3 +13,8 @@
 
 Route::get('/', 'PagesController@index')->name('home');
 Route::get('/home', 'PagesController@index');
+
+Route::get('/about', 'PagesController@about')->name('about');
+Route::get('/projects', 'PagesController@projects')->name('projects');
+Route::get('/shop', 'PagesController@shop')->name('shop');
+Route::get('/blog', 'PagesController@blog')->name('blog');
